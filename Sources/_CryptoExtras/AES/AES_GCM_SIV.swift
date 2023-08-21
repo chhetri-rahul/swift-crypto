@@ -117,7 +117,7 @@ extension AES.GCM._SIV {
 extension AES.GCM._SIV {
     public struct SealedBox {
         /// The combined representation ( nonce || ciphertext || tag)
-        public let combined: Data
+        public var combined = Data()
         /// The authentication tag
         public var tag: Data {
             return combined.suffix(AES.GCM._SIV.tagByteCount)
