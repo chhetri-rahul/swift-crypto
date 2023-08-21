@@ -118,6 +118,9 @@ let package = Package(
                 "Key Agreement/ECDH.swift.gyb",
                 "Signatures/ECDSA.swift.gyb",
             ],
+            cSettings: [
+                .define("BUILD_LIBRARY_FOR_DISTRIBUTION", to: "NO")
+            ],
             swiftSettings: swiftSettings
         ),
         .target(
@@ -130,6 +133,9 @@ let package = Package(
             ],
             exclude: [
                 "CMakeLists.txt",
+            ],
+            cSettings: [
+                .define("BUILD_LIBRARY_FOR_DISTRIBUTION", to: "NO")
             ]
         ),
         .target(
